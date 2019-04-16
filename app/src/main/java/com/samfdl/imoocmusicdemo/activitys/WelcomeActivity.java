@@ -29,10 +29,19 @@ public class WelcomeActivity extends BaseActivity {
         mTimer.schedule(new TimerTask() {
             @Override
             public void run() {
-                toMain();
+                toLogin();
+//                toMain();
                 // Log.e("WelcomeActivity", "当前线程为：" + Thread.currentThread());
             }
         }, 3000);
+    }
+
+    /**
+     * 跳转到LoginActivity
+     */
+    private void toLogin() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     /**
