@@ -9,9 +9,44 @@
 
     <include layout="@layout/nav_bar" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/marginSize"
+        android:src="@mipmap/logo" />
+
+    <com.samfdl.imoocmusicdemo.views.InputView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/inputViewHeight"
+        android:layout_marginTop="@dimen/marginSize"
+        app:input_hint="手机号"
+        app:input_icon="@mipmap/phone"
+        app:is_password="false" />
+
+    <View style="@style/line" />
+
+    <com.samfdl.imoocmusicdemo.views.InputView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/inputViewHeight"
+        android:layout_marginTop="@dimen/marginSize"
+        app:input_hint="密码"
+        app:input_icon="@mipmap/password"
+        app:is_password="true" />
+
+    <View style="@style/line" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LoginActivity"
-        android:textSize="48sp" />
+        android:layout_gravity="center_horizontal"
+        android:onClick="onRegisterClick"
+        android:padding="@dimen/marginSize"
+        android:text="立即注册"
+        android:textColor="@color/mainColor"
+        android:textSize="@dimen/infoSize" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/inputViewHeight" />
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.samfdl.imoocmusicdemo.activitys;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.samfdl.imoocmusicdemo.R;
 
@@ -20,5 +21,12 @@ public class LoginActivity extends BaseActivity {
      */
     private void initView() {
         initNavBar(false, "登录", false);
+    }
+
+    /**
+     * 跳转注册页面点击事件
+     */
+    public void onRegisterClick(View v) {
+
     }
 }
