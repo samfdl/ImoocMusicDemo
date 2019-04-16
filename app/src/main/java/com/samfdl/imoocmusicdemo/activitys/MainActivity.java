@@ -1,9 +1,10 @@
-package com.samfdl.imoocmusicdemo;
+package com.samfdl.imoocmusicdemo.activitys;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.samfdl.imoocmusicdemo.R;
+
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
