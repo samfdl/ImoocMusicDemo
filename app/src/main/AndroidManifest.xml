@@ -20,5 +20,7 @@
         <activity android:name=".activitys.LoginActivity" />
         <activity android:name=".activitys.RegisterActivity" />
         <activity android:name=".activitys.MainActivity" />
+        <activity android:name=".activitys.MeActivity" />
     </application>
+
 </manifest>
