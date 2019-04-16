@@ -47,6 +47,7 @@
         android:textSize="@dimen/infoSize" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/inputViewHeight" />
+        style="@style/commitBtn"
+        android:layout_marginTop="@dimen/marginSize"
+        android:text="登  录" />
 </LinearLayout>

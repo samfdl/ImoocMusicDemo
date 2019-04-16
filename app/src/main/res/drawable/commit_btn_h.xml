@@ -3,7 +3,7 @@
     android:shape="rectangle">
 
     <!--实体颜色-->
-    <solid android:color="@color/mainColor" />
+    <solid android:color="@color/mainColorH" />
     <!--边角弧度-->
     <corners android:radius="@dimen/radius" />
 </shape>
