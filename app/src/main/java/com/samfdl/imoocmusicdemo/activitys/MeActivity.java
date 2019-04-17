@@ -8,7 +8,6 @@ import com.samfdl.imoocmusicdemo.R;
 import com.samfdl.imoocmusicdemo.utils.UserUtils;
 
 public class MeActivity extends BaseActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +27,8 @@ public class MeActivity extends BaseActivity {
      * 修改密码点击事件
      */
     public void onChangeClick(View v) {
+        Intent intent = new Intent(this, ChangePasswordActivity.class);
+        startActivity(intent);
     }
 
     /**
