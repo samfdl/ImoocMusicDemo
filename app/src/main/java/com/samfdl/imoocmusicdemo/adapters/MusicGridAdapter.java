@@ -48,12 +48,10 @@ public class MusicGridAdapter extends RecyclerView.Adapter<MusicGridAdapter.View
 
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivIcon;
-        View itemView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            this.itemView = itemView;
             ivIcon = itemView.findViewById(R.id.iv_icon);
         }
     }

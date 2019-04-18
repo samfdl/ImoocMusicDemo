@@ -1,6 +1,7 @@
 package com.samfdl.imoocmusicdemo.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 import com.samfdl.imoocmusicdemo.R;
+import com.samfdl.imoocmusicdemo.activitys.PlayMusicActivity;
 
 public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.ViewHolder> {
     private Context mContext;
@@ -35,6 +37,14 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
         Glide.with(mContext)
                 .load("http://res.lgdsunday.club/poster-1.png")
                 .into(viewHolder.ivIcon);
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, PlayMusicActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
