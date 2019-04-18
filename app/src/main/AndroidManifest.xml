@@ -24,6 +24,6 @@
         <activity android:name=".activitys.MainActivity" />
         <activity android:name=".activitys.MeActivity" />
         <activity android:name=".activitys.ChangePasswordActivity" />
+        <activity android:name=".activitys.AlbumListActivity" />
     </application>
-
 </manifest>
