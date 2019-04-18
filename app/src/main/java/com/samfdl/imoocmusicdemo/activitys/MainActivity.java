@@ -1,6 +1,7 @@
 package com.samfdl.imoocmusicdemo.activitys;
 
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -39,7 +40,8 @@ public class MainActivity extends BaseActivity {
 
         mRvList = fd(R.id.rv_list);
         mRvList.setLayoutManager(new LinearLayoutManager(this));
-        mListAdapter = new MusicListAdapter(this);
+        mRvList.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        mListAdapter = new MusicListAdapter(this, mRvList);
         mRvList.setAdapter(mListAdapter);
     }
 }
