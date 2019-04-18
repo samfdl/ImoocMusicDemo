@@ -6,7 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.samfdl.imoocmusicdemo.R;
 
 public class MusicGridAdapter extends RecyclerView.Adapter<MusicGridAdapter.ViewHolder> {
@@ -24,6 +26,9 @@ public class MusicGridAdapter extends RecyclerView.Adapter<MusicGridAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        Glide.with(mContext)
+                .load("http://res.lgdsunday.club/poster-1.png")
+                .into(viewHolder.ivIcon);
     }
 
     @Override
@@ -32,8 +37,12 @@ public class MusicGridAdapter extends RecyclerView.Adapter<MusicGridAdapter.View
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView ivIcon;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            ivIcon = itemView.findViewById(R.id.iv_icon);
         }
     }
 }
