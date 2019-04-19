@@ -12,6 +12,12 @@
         android:scaleType="centerCrop"
         android:src="@mipmap/img1" />
 
+    <com.samfdl.imoocmusicdemo.views.PlayMusicView
+        android:id="@+id/play_music_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,11 +49,4 @@
             android:textSize="@dimen/titleSize"
             android:textStyle="bold" />
     </LinearLayout>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@mipmap/disc"
-        android:visibility="gone" />
 </FrameLayout>
