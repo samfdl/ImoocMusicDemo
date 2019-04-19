@@ -13,8 +13,6 @@ public class MediaPlayerHelp {
 
     private MediaPlayer mMediaPlayer;
 
-    private OnMediaPlayerHelperListener mOnMediaPlayerHelperListener;
-
     private String mPath;
 
     public static MediaPlayerHelp getInstance(Context context) {
@@ -62,9 +60,7 @@ public class MediaPlayerHelp {
             mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
-                    if (mOnMediaPlayerHelperListener != null) {
-                        mOnMediaPlayerHelperListener.onPrepared(mMediaPlayer);
-                    }
+                    MediaPlayerHelp.this.start();
                 }
             });
         } catch (IOException e) {
@@ -96,14 +92,5 @@ public class MediaPlayerHelp {
      */
     public void pause() {
         mMediaPlayer.pause();
-    }
-
-    public void setOnMeidaPlayerHelperListener(OnMediaPlayerHelperListener onMediaPlayerHelperListener) {
-        this.mOnMediaPlayerHelperListener = onMediaPlayerHelperListener;
-    }
-
-    public interface OnMediaPlayerHelperListener {
-        void onPrepared(MediaPlayer mp);
-
     }
 }

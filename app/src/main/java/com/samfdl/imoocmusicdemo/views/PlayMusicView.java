@@ -1,7 +1,6 @@
 package com.samfdl.imoocmusicdemo.views;
 
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -117,12 +116,6 @@ public class PlayMusicView extends FrameLayout {
             mMediaPlayerHelp.start();
         } else {
             mMediaPlayerHelp.setPath(path);
-            mMediaPlayerHelp.setOnMeidaPlayerHelperListener(new MediaPlayerHelp.OnMediaPlayerHelperListener() {
-                @Override
-                public void onPrepared(MediaPlayer mp) {
-                    mMediaPlayerHelp.start();
-                }
-            });
         }
     }
 
