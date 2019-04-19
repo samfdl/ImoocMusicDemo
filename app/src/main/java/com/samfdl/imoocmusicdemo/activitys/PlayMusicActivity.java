@@ -37,6 +37,7 @@ public class PlayMusicActivity extends BaseActivity {
 
         mPlayMusicView = fd(R.id.play_music_view);
         mPlayMusicView.setMusicIcon("http://res.lgdsunday.club/poster-1.png");
+        mPlayMusicView.playMusic("http://res.lgdsunday.club/Nostalgic%20Piano.mp3");
     }
 
     /**

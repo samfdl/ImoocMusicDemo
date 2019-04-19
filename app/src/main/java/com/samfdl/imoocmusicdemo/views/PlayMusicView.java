@@ -1,6 +1,7 @@
 package com.samfdl.imoocmusicdemo.views;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +16,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.samfdl.imoocmusicdemo.R;
+import com.samfdl.imoocmusicdemo.helps.MediaPlayerHelp;
 
 public class PlayMusicView extends FrameLayout {
     private Context mContext;
@@ -26,6 +28,10 @@ public class PlayMusicView extends FrameLayout {
     private Animation mPlayMusicAnim, mPlayNeedleAnim, mStopNeedleAnim;
 
     private boolean isPlaying;
+
+    private MediaPlayerHelp mMediaPlayerHelp;
+
+    private String mPath;
 
     public PlayMusicView(@NonNull Context context) {
         super(context);
@@ -76,6 +82,8 @@ public class PlayMusicView extends FrameLayout {
         mStopNeedleAnim = AnimationUtils.loadAnimation(mContext, R.anim.stop_needle_anim);
 
         addView(mView);
+
+        mMediaPlayerHelp = MediaPlayerHelp.getInstance(mContext);
     }
 
     /**
@@ -85,18 +93,37 @@ public class PlayMusicView extends FrameLayout {
         if (isPlaying) {
             stopMusic();
         } else {
-            playMusic();
+            playMusic(mPath);
         }
     }
 
     /**
      * 播放音乐
      */
-    public void playMusic() {
+    public void playMusic(String path) {
+        mPath = path;
         isPlaying = true;
         mIvPlay.setVisibility(GONE);
         mFlPlayMusic.startAnimation(mPlayMusicAnim);
         mIvNeedle.startAnimation(mPlayNeedleAnim);
+
+        /**
+         * 判断当前音乐是否已经在播放
+         * 如果当前音乐已经在播放，那么就直接执行start方法
+         * 如果当前播放的音乐不是需要播放的音乐的话，那就调用setPath方法
+         */
+        if (mMediaPlayerHelp.getPath() != null
+                && mMediaPlayerHelp.getPath().equals(path)) {
+            mMediaPlayerHelp.start();
+        } else {
+            mMediaPlayerHelp.setPath(path);
+            mMediaPlayerHelp.setOnMeidaPlayerHelperListener(new MediaPlayerHelp.OnMediaPlayerHelperListener() {
+                @Override
+                public void onPrepared(MediaPlayer mp) {
+                    mMediaPlayerHelp.start();
+                }
+            });
+        }
     }
 
     /**
@@ -107,6 +134,8 @@ public class PlayMusicView extends FrameLayout {
         mIvPlay.setVisibility(VISIBLE);
         mFlPlayMusic.clearAnimation();
         mIvNeedle.startAnimation(mStopNeedleAnim);
+
+        mMediaPlayerHelp.pause();
     }
 
     /**
